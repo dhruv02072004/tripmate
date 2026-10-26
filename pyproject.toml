@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+  "live: calls the real Gemini API (needs GOOGLE_API_KEY)",
+  "slow: loads the embedding model",
+]
+addopts = "-m 'not live'"

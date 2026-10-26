@@ -1,0 +1,15 @@
+langchain>=0.3
+langchain-core
+langchain-text-splitters
+langgraph>=0.2
+langchain-google-genai
+langchain-chroma
+langchain-huggingface
+sentence-transformers
+chromadb
+httpx
+tenacity
+cachetools
+pydantic>=2
+pydantic-settings
+pytest
