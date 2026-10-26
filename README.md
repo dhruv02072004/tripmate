@@ -139,22 +139,7 @@ Secrets belong in `.env` (never committed). Calibrated constants live in code as
 
 ## 4. Architecture
 
-```mermaid
-flowchart LR
-    UI["React UI (optional)"] -->|"POST /api/chat"| API["FastAPI wrapper"]
-    CLI["CLI"] --> V
-    API --> V["Input validation"]
-    V --> G["LangGraph agent loop"]
-    G <-->|"messages and tool requests"| L["Gemini Flash-Lite"]
-    G -->|"tool calls"| T["Tool layer: logging and error wrapper"]
-    T --> R["search_destination_guide"]
-    T --> W["get_weather_forecast"]
-    R --> C[("ChromaDB + bge-small embeddings")]
-    W --> S["Weather service: TTL cache, retries"]
-    S --> O["Open-Meteo: geocoding, forecast, archive"]
-    G --> A["Answer + trace.jsonl"]
-    A --> UI
-```
+   ![TripMate architecture](docs/architecture.svg)
 
 ### Request flow
 
