@@ -13,3 +13,5 @@ cachetools
 pydantic>=2
 pydantic-settings
 pytest
+fastapi
+uvicorn[standard]
